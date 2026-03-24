@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Snake Game (Java)</title>
+  <title>Snake Game - Web + Java</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -16,7 +16,7 @@
       padding: 24px;
     }
     .card {
-      width: min(700px, 100%);
+      width: min(860px, 100%);
       background: #111827;
       border: 1px solid #334155;
       border-radius: 14px;
@@ -45,24 +45,75 @@
     li {
       margin: 10px 0;
     }
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .canvas-wrap {
+      background: #0b1220;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 14px;
+    }
+    canvas {
+      display: block;
+      width: 100%;
+      max-width: 520px;
+      background: #0f172a;
+      border-radius: 8px;
+      margin: 0 auto;
+    }
+    .controls {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    .btn.secondary {
+      background: #3b82f6;
+      color: #eaf3ff;
+      border: none;
+      cursor: pointer;
+    }
+    .muted {
+      color: #93a6c6;
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
+    @media (min-width: 900px) {
+      .layout {
+        grid-template-columns: 560px 1fr;
+        align-items: start;
+      }
+    }
   </style>
 </head>
 <body>
   <section class="card">
-    <h1>Snake Game - Java (Swing)</h1>
-    <p>This game is written in Java and runs as a desktop app.</p>
-    <a class="btn" href="./snake-game.jar">Download snake-game.jar</a>
-    <h2>How to run</h2>
-    <ol>
-      <li>Install Java (version 17+ recommended).</li>
-      <li>Download <code>snake-game.jar</code> from this page.</li>
-      <li>Run: <code>java -jar snake-game.jar</code></li>
-    </ol>
-    <h2>Controls</h2>
-    <ul>
-      <li>Arrow keys to move</li>
-      <li><code>R</code> or <code>Space</code> to restart after game over</li>
-    </ul>
+    <h1>Snake Game - Play in Browser</h1>
+    <div class="layout">
+      <div class="canvas-wrap">
+        <canvas id="game" width="520" height="520"></canvas>
+        <div class="controls">
+          <button id="startBtn" class="btn secondary" type="button">Start / Restart</button>
+          <span id="scoreLabel">Score: 0 | High: 0</span>
+        </div>
+        <p class="muted">Controls: Arrow keys or WASD. Press Space to restart.</p>
+      </div>
+
+      <div>
+        <p>You can also download the Java desktop version:</p>
+        <a class="btn" href="./snake-game.jar">Download snake-game.jar</a>
+        <h2>Java version</h2>
+        <ol>
+          <li>Install Java (version 17+ recommended).</li>
+          <li>Download <code>snake-game.jar</code> from this page.</li>
+          <li>Run: <code>java -jar snake-game.jar</code></li>
+        </ol>
+      </div>
+    </div>
   </section>
+  <script src="./snake-web.js"></script>
 </body>
 </html>

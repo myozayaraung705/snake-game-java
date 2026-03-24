@@ -37,7 +37,7 @@ jobs:
       - name: Prepare Pages artifact
         run: |
           mkdir -p public
-          cp site/index.html public/index.html
+          cp -r site/* public/
           cp out/jar/snake-game.jar public/snake-game.jar
 
       - name: Upload artifact
