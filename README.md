@@ -43,16 +43,4 @@ run.bat
 - `R` or `Space` - restart after game over
 - Web also supports `W/A/S/D`
 
-## Deployment
 
-After pushing this project to GitHub on branch `main`, GitHub Actions will:
-
-1. Build the JAR
-2. Publish a GitHub Pages site with:
-   - `index.html`
-   - playable web Snake (`snake-web.js`)
-   - downloadable `snake-game.jar`
-
-When deployment finishes, your game page will be available at:
-
-`https://<your-github-username>.github.io/<repository-name>/`
